@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body,
+html {
+  display: grid;
+  height: 100%;
+  place-items: center;
+}
+
+.wrapper {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .preview-box {
+    position: relative;
+    width: 100%;
+    height: 370px;
+    border: 2px dashed #c2c2c2;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    &.active {
+      border: 2px solid transparent;
+    }
+
+    .img-preview {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+      }
+    }
+
+    .cancle-img {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      font-size: 25px;
+      color: #4158d0;
+      cursor: pointer;
+      z-index: 999;
+      display: none;
+
+      &:hover {
+        color: rgb(189, 16, 16);
+      }
+      &.active {
+        display: block;
+      }
+    }
+
+    .img-icon {
+      font-size: 100px;
+      background: linear-gradient(-135deg, #c850c0, #4158d0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text {
+      font-size: 20px;
+      font-weight: 600;
+      color: #5b5b7b;
+    }
+  }
+
+  .input-data {
+    height: 130px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    #field {
+      height: 50px;
+      width: 100%;
+      border: 2px solid lightgray;
+      font-size: 18px;
+      outline: 0;
+      padding: 0 15px;
+      caret-color: #4158d0;
+      font-weight: 500;
+      color: lightgray;
+      transition: all 0.5s ease-in-out;
+      &::placeholder {
+        color: #b3b3b3;
+      }
+      &:focus {
+        border: 2px solid #4158d0;
+      }
+      &.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+    #button {
+      width: 100%;
+      height: 50px;
+      outline: 0;
+      background: linear-gradient(-135deg, #c850c0, #4158d0);
+      color: #fff;
+      font-weight: 600;
+      font-size: 20px;
+      pointer-events: none;
+      opacity: 0.5;
+      transition: all 0.5s ease-in-out;
+      border-radius: 5px;
+      cursor: pointer;
+      &:active {
+        transform: scale(0.9);
+      }
+      &.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+}
